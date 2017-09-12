@@ -1,0 +1,67 @@
+div{
+    text-align: center;
+}
+
+h1{
+    font-family: STHupo;
+    color: white;
+}
+
+select{
+    width: auto;
+    margin-left: 12.2%;
+    margin-right: 10%;
+    font-family:YouYuan ;
+    font-size: 50px;
+}
+
+button{
+    border-radius: 25px;
+}
+
+body{
+    background: #3399CC;
+}
+
+caption{/*表格列表*/
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 2em;
+}
+
+label{
+    color:white;
+    font-size: larger;
+}
+
+th{
+    text-align: center;
+}
+
+p{
+    /*color:white;*/
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

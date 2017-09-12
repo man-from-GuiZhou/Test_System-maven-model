@@ -1,0 +1,46 @@
+/*注册表项所在区域*/
+#registerBody{
+    width: auto;
+    margin-top: 10%;
+    margin-left:30%;
+    margin-right: 30%;
+    padding-left: 5%;
+    padding-top:2%;
+    padding-right: 5%;
+    border: solid;
+    border-color: white;
+    border-radius: 25px;
+}
+
+h1{
+    text-align: center;
+}
+
+/*提交按键所在的位置*/
+.submitButton{
+    margin-left: 82%;
+    background: #99CC33;
+    color: white;
+    border: thick;
+    border-radius: 10px;
+}
+
+/*页面所有内容所在区域*/
+#pagebody{
+    width:auto;
+    margin-left: 20%;
+    margin-right:20%;
+    padding-bottom: 10%;
+    margin-top:3%;
+    border: solid;
+    background: #3399CC;
+    border-radius: 50px;
+    border-color: #66CC66;
+    -webkit-box-shadow: 10px;
+    -moz-box-shadow: 10px;
+    box-shadow:  10px 10px 5px #777777;
+}
+
+body{
+    background: white;
+}
