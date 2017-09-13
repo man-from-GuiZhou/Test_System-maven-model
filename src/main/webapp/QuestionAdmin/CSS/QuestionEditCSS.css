@@ -1,0 +1,149 @@
+#questionList{ /*题库列表所属的区域*/
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 5%;
+    background: #ffffff;
+    font-size: larger;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 30px;
+    padding-left: 5%;
+    padding-right: 0px;
+}
+
+caption{/*表格列表*/
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 2em;
+}
+
+th{
+    font-family:YouYuan;
+    text-align: center;
+    color: white;
+}
+
+thead{
+    background: #99CC33;
+}
+
+td{
+    font-family:YouYuan;
+    text-align: center;
+}
+h1{
+    padding-left: 8%;
+    font-family: STCaiYun;
+    color: black;
+}
+
+body{
+    background: #3399CC;
+}
+
+/*添加题目区域*/
+#addQuestion{
+    float:left;
+    margin-left: 6em;
+    width: 10em;
+    margin-top:1.96%;
+}
+
+#questionEditDiv{/*题目内容修改所在区域*/
+    border-radius: 25px;
+    width: 80%;
+    border:solid;
+    border-color: #66CC66;
+    color: white;
+    margin-left:10%;
+    margin-right: 10%;
+    font-size: 15px;
+    font-family: Microsoft YaHei, serif;
+    background: #3399CC;
+}
+
+body{
+    background: white;
+}
+
+h2.libInfo{/*题库信息*/
+    color: white;
+    font-family: "Microsoft YaHei";
+    width: 20em;
+    margin-left: 35em;
+}
+
+#questionEdit{/*题目编辑表单*/
+    color: white;
+}
+
+span{
+    margin-right: 3%;
+}
+
+input{
+    color:black;
+}
+
+#addQuestionDiv{/*下拉选择框所在位置*/
+    width: 30em;
+    float: left;
+    padding-right: 7%;
+}
+
+.searchDiv{/*搜索题目区域*/
+    float: left;
+    margin-left: 10%;
+    margin-top: 2em;
+    padding-bottom: 0em;
+    display: inline;
+}
+
+p{
+    font-size: 20px;
+    font-family: YouYuan;
+}
+
+#questionContextDiv p,#questionAnswerDiv p
+{
+    margin-top: 2%;
+    margin-right:70% ;
+}
+
+/*题目内容文本和答案文本框*/
+.questionText{
+    border:solid;
+    border-color: #99CC33;
+    width: 78%;
+    height:10em;
+    color: black;
+    border-radius: 10px;
+    /*background: #333366;*/
+    font-family: KaiTi;
+    font-size: larger;
+}
+
+/*分值设置和按键的位置*/
+.questionPosition{
+    display: inline-table;
+    padding-left: 20%;
+}
+
+/*按键区域的位置*/
+
+.tips{/**/
+    margin-left: 38%;
+}
+
+#searchButton/*搜索按键*/{
+    width: 8em;
+    margin-top: 1.89%;
+    margin-right: 23%;
+}
+
+#questionId{
+    width: 12em;
+}
+
+#questionType{
+    margin-left:53.6%;
+}

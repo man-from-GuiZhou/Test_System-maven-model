@@ -1,0 +1,109 @@
+
+/*UserCenter页面中包含了阅卷用户的中心页面*/
+
+.PageInfoTitle{/*页面标题信息所在区域*/
+    text-align: left;
+    background: #99CC33;
+    width: 60%;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border: solid;
+}
+h1{/*显示在网页首页的标题*/
+    margin-left: auto;
+    margin-right: 50%;
+    color: white;
+    width: 40%;
+}
+
+#ToPerusaList{/*试卷列表所在区域*/
+    border-radius: 25px;
+    background: #ffffff;
+    padding-bottom: 1em;
+}
+
+#QuesLibDiv{
+    background: #336699;
+    color: white;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+body{
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:5%;
+    margin-right:5%;
+    /*background: #666666;*/
+}
+
+table{
+    font-family: SimHei;
+}
+
+/*试卷列表*/
+#PaperList{
+    margin-top:5em ;
+}
+
+label{/*在页面上用来显示用户名*/
+    background: black;
+    padding:2px;
+    font-family: sans-serif;
+}
+
+td{
+    text-align: center;
+    width: 1%;
+    font-family: STZhongsong;
+}
+
+.tdFunction{/*进入题库功能键所在的区域*/
+    width: 0.05%;
+    padding: 0px;
+}
+
+tr{
+    width: 1%;
+}
+
+caption{
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+th{
+        text-align: center;
+        font-size: larger;
+}
+
+.userInfoDiv{/*显示阅卷用户的基本信息的区域*/
+    padding-top: 4px;
+    text-align: right;
+    background: #333366;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    padding-right: 10em;
+    margin-left: 30em;
+    border-bottom: solid;
+    border-left: solid;
+
+    border-top: solid;
+    border-color: white;
+}
+
+.userInfo{/*用户信息文本*/
+    color: white;
+}
+
+p{
+    font-size: larger;
+    font-family: Microsoft YaHei;
+}
+
+caption{
+    color: black;
+}
+
