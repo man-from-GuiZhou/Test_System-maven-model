@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -29,13 +30,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+            <c:forEach var="lib" items="${libList}">
+            	    <td>${lib.question_lib_id}</td>
+                    <td>${lib.testpage_type}</td>
+                    <td>${lib.testpage_job}</td>
+                    <td>${lib.question_num}</td>
+                    <td class="tdFunction"><a href="QuestionCenter.html?lib_id=question_lib_id"><button class="btn btn-default">进入题库</button></a></td>
+            </c:forEach>
+            
+            <!--<tr>
                     <td>1</td>
                     <td>职业测试</td>
                     <td>电气工程师</td>
                     <td>100</td>
                     <td class="tdFunction"><a href="QuestionCenter.html"><button class="btn btn-default">进入题库</button></a></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

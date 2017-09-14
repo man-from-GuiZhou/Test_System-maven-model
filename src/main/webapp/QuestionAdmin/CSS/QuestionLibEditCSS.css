@@ -1,0 +1,21 @@
+.inputBox{
+    width:50%;
+    margin-left: 30%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#pageBody{
+    border: solid;
+    margin-top: 6%;
+    margin-left: 15%;
+    margin-right: 20%;
+    border-radius: 50px;
+    border-color: #66CC66;
+    background: #3399CC;
+    padding-bottom: 5%;
+}
+
+body{
+    background: white;
+}
