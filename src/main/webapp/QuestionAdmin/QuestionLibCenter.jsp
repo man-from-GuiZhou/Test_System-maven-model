@@ -35,7 +35,7 @@
                     <td>${lib.testpage_type}</td>
                     <td>${lib.testpage_job}</td>
                     <td>${lib.question_num}</td>
-                    <td class="tdFunction"><a href="QuestionCenter.html?lib_id=question_lib_id"><button class="btn btn-default">进入题库</button></a></td>
+                    <td class="tdFunction"><a href="QuestionAdmin/QuestionCenter.jsp?lib_id=question_lib_id"><button class="btn btn-default">进入题库</button></a></td>
             </c:forEach>
             
             <!--<tr>

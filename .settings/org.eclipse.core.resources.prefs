@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//propertiesFolder/db.properties=UTF-8
+encoding//src/main/java/dao/impl/ConnectionPool.java=GBK
 encoding//src/main/java/domain/Question_Lib.java=UTF-8
 encoding/<project>=UTF-8
