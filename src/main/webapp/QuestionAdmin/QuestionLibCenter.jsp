@@ -20,7 +20,7 @@
     </div>
     <div id="QuesLibDiv">
         <table class="table">
-            <caption>题库列表</caption>
+            <caption>题库列表</caption> 
             <thead>
                 <tr>
                     <th>题库编号</th>
@@ -35,9 +35,8 @@
                     <td>${lib.testpage_type}</td>
                     <td>${lib.testpage_job}</td>
                     <td>${lib.question_num}</td>
-                    <td class="tdFunction"><a href="QuestionAdmin/QuestionCenter.jsp?lib_id=question_lib_id"><button class="btn btn-default">进入题库</button></a></td>
-            </c:forEach>
-            
+                    <td class="tdFunction"><a href="QuestionLibCenter?lib_id=${lib.question_lib_id}&operate=enterEdit "><button class="btn btn-default">修改题库</button></a></td>
+            </c:forEach>         
             <!--<tr>
                     <td>1</td>
                     <td>职业测试</td>
@@ -47,6 +46,7 @@
                 </tr> -->
             </tbody>
         </table>
+        <a href="QuestionAdmin/QuestionLibAdd.jsp"><button class="btn btn-default">新增题库</button></a>
     </div>
 </div>
 </body>

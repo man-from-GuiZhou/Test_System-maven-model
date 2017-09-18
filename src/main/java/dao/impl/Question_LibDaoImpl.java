@@ -76,6 +76,25 @@ public class Question_LibDaoImpl implements Question_libDao {
 	@Override
 	public Question_Lib findLib(int id) {
 		// TODO Auto-generated method stub
+		try {
+			String sql="SELECT * from question_lib where question_lib_id=?";
+			conn= JDBCUtils.getConnection();
+			pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			rs=pst.executeQuery();
+			rs.next();
+			System.out.println(rs.getString(3));
+			Question_Lib ql = new Question_Lib();
+			ql.setQuestion_lib_id(id);
+			ql.setTestpage_type(rs.getString(2));
+			ql.setTestpage_job(rs.getString(3));
+			ql.setQuestion_num(rs.getInt(4));
+			return ql;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("为空");
 		return null; 
 	}
 
