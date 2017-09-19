@@ -74,23 +74,31 @@ public class QuestionLibCenter extends HttpServlet {
 		// TODO Auto-generated method stub 
 		//doGet(request, response);
 		//System.out.println("POST方法接收");
-		try {
-			Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
+			//Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
+			QuestionLibService qls = new QuestionLibServiceImpl();
 			String operate=request.getParameter("operate");
 			switch(operate) {
 			//添加题库
 			case "add":
-				String type=request.getParameter("testpage_type");
-				String job=request.getParameter("testpage_job");
-				Question_Lib ql = new Question_Lib();
-				ql.setTestpage_type(type);
-				ql.setTestpage_job(job);
-				qld.addLib(ql);
+				String addType=request.getParameter("testpage_type");
+				System.out.println("servlet:"+addType);
+				String addJob=request.getParameter("testpage_job");
+				qls.addLib(addType, addJob);			
 				break;
+			case "edit":
+				int editId = Integer.parseInt(request.getParameter("testpage_lib_id"));
+				String editType=request.getParameter("testpage_type");
+				System.out.println("servlet:"+editType);
+				String editJob=request.getParameter("testpage_job");
+				qls.updateLib(editId, editType, editJob);
+				break;
+			case "remove":
+				int removeId = Integer.parseInt(request.getParameter("testpage_lib_id"));
+				qls.removeLib(removeId);
 			}
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+			
+			//这里跳转以后不能更新管理页的页面
+			RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibCenter.jsp");
+			rd.forward(request, response);
+		} 
 }

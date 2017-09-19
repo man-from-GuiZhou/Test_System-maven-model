@@ -12,9 +12,9 @@
 <body>
 <div id="pageBody">
     <h1>题库添加</h1> 
-    <form action="QuestionLibCenter?operate=add" class="libForm" role="form" method="post">
+    <form action="../QuestionLib.do?operate=add" class="libForm" role="form" method="post">
         <div class="form-group">
-            <input type="text" class="form-control inputBox" name ="testpage_lib_type"   placeholder="请输入题库类型">
+            <input type="text" class="form-control inputBox" name ="testpage_type"   placeholder="请输入题库类型">
         </div>
         <div class="form-group">
             <input type="text" class="form-control inputBox" name ="testpage_job"  placeholder="请输入题库目标职位">

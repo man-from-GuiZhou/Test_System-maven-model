@@ -20,18 +20,57 @@ public class Question_LibDaoImpl implements Question_libDao {
 	@Override
 	public int addLib(Question_Lib qLib) {
 		// TODO Auto-generated method stub
+		String sql = "INSERT into question_lib(testpage_type,testpage_job,question_num) values(?,?,?)";
+		conn=JDBCUtils.getConnection();
+		try {
+			pst=conn.prepareStatement(sql);
+			pst.setString(1, qLib.getTestpage_type());
+			pst.setString(2, qLib.getTestpage_job());
+			pst.setInt(3, 0); 
+			pst.executeUpdate();
+			JDBCUtils.release(conn, pst, rs);
+			return 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return 0;
 	}
 
 	@Override
 	public int removeLib(int id) {
 		// TODO Auto-generated method stub
+		String sql = "delete from where question_lib_id =?";
+		try {
+			conn=JDBCUtils.getConnection();
+			pst=conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			JDBCUtils.release(conn, pst, rs);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return 0;
 	}
 
 	@Override
 	public int updateLib(Question_Lib qLib) {
 		// TODO Auto-generated method stub
+		String sql="update question_lib set testpage_type=?,testpage_job=? where question_lib_id=?";
+		try {
+			conn= JDBCUtils.getConnection();
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, qLib.getTestpage_type());
+			pst.setString(2, qLib.getTestpage_job());
+			pst.setInt(3, qLib.getQuestion_lib_id());
+			pst.executeUpdate();
+			JDBCUtils.release(conn, pst, rs);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return 0;
 	}
 
@@ -54,6 +93,7 @@ public class Question_LibDaoImpl implements Question_libDao {
 				libList.add(tempLib);
 				tempLib =(Question_Lib) Class.forName("domain.Question_Lib").newInstance();
 			}
+			JDBCUtils.release(conn, pst, rs);
 			return libList;
 			
 		} catch (SQLException e) {
@@ -89,6 +129,7 @@ public class Question_LibDaoImpl implements Question_libDao {
 			ql.setTestpage_type(rs.getString(2));
 			ql.setTestpage_job(rs.getString(3));
 			ql.setQuestion_num(rs.getInt(4));
+			JDBCUtils.release(conn, pst, rs);
 			return ql;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

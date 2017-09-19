@@ -80,6 +80,7 @@ th{
 }
 
 .userInfoDiv{/*显示阅卷用户的基本信息的区域*/
+	/*
     padding-top: 4px;
     text-align: right;
     background: #333366;
@@ -89,9 +90,9 @@ th{
     margin-left: 30em;
     border-bottom: solid;
     border-left: solid;
-
     border-top: solid;
     border-color: white;
+    */
 }
 
 .userInfo{/*用户信息文本*/

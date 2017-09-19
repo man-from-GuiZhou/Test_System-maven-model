@@ -25,18 +25,33 @@ public class QuestionLibServiceImpl implements QuestionLibService {
 	@Override
 	public int addLib(String libType, String libName) {
 		// TODO Auto-generated method stub
+		Question_Lib ql = new Question_Lib();
+		ql.setTestpage_type(libType);
+		ql.setTestpage_job(libName);
+		System.out.println(libName);
+		if(qld.addLib(ql)==1) {
+			return 1;
+		}
 		return 0;
 	}
-
+	/*
+	 * 修改题库的信息
+	 */
 	@Override
 	public int updateLib(int id, String libType, String libName) {
 		// TODO Auto-generated method stub
+		Question_Lib ql = new Question_Lib();
+		ql.setQuestion_lib_id(id);
+		ql.setTestpage_type(libType);
+		ql.setTestpage_job(libName);
+		qld.updateLib(ql);
 		return 0;
 	}
 
 	@Override
 	public int removeLib(int id) {
 		// TODO Auto-generated method stub
+		qld.removeLib(id);
 		return 0;
 	}
 

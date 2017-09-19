@@ -11,12 +11,12 @@
 <body>
 <div id="pageBody">
     <h1>题库编辑</h1>
-    <form class="libForm" role="form">
+    <form action="QuestionLib.do?operate=edit" class="libForm" role="form" method="post">
         <div class="form-group">
             <input type="hidden" name="testpage_lib_id" value=${lib_info.question_lib_id }>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control inputBox" name="testpage_lib_type" value=${lib_info.testpage_type } placeholder="请输入题库类型">
+            <input type="text" class="form-control inputBox" name="testpage_type" value=${lib_info.testpage_type } placeholder="请输入题库类型">
         </div>
         <div class="form-group">
             <input type="text" class="form-control inputBox" name="testpage_job" value=${lib_info.testpage_job } placeholder="请输入题库目标职位">

@@ -4,17 +4,31 @@
     <welcome-file>QuestionLibCenter</welcome-file>
   </welcome-file-list>
   <display-name>Archetype Created Web Application</display-name>
-  
-  
-    <!-- 该过滤器用来拦截其它访问，将其重新转到首页 -->
+  <servlet>
+    <servlet-name>Question_libServlet</servlet-name>
+    <servlet-class>controller.QuestionLibCenter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Question_libServlet</servlet-name>
+    <url-pattern>/QuestionLib.do</url-pattern> 
+  </servlet-mapping>
   <filter>
-  	<filter-name>PageToIndex</filter-name>
-  	<filter-class>filter.PageToIndex</filter-class>
+    <filter-name>PageToIndex</filter-name>
+    <filter-class>filter.PageToIndex</filter-class>
+  </filter> 
+  
+  <filter>
+  	    <filter-name>encordingCheck</filter-name>
+  	    <filter-class>filter.EncordingFilter</filter-class>
   </filter>
-
+  
   <filter-mapping>
-  	<filter-name>PageToIndex</filter-name>
-  	<url-pattern>*.html</url-pattern>
+  	<filter-name>encordingCheck</filter-name>
+  	<url-pattern>*</url-pattern>
   </filter-mapping>
   
+  <filter-mapping>
+    <filter-name>PageToIndex</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping>
 </web-app>
