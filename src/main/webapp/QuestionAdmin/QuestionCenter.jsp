@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -26,17 +27,18 @@
                     </tr>
                 </thead>
             <tbody>
+                <c:forEach var="question" items="questionList" varStatus="Count">
                 <tr>
-                    <td>1</td>
-                    <td>基本测试</td>
-                    <td>XXXXXXX</td>
-                    <td>XXXXXXX</td>
-                    <td>5</td>
+                    <td>${Count.count}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td id="tdButton">
                         <span><a href="QuestionEdit.html"><button class="btn btn-default EditButton">修改题目</button></a></span>
                         <span><button class="btn btn-default EditButton">删除题目</button></span>
                     </td>
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
         </div>

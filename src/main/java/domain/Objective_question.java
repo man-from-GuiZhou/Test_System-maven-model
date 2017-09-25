@@ -1,6 +1,6 @@
 package domain;
 
-public class Objective_question {
+public class Objective_question extends question{
 	
 	private int question_id;//题目id
 	private int question_lib_id;//题库id

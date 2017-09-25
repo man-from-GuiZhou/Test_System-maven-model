@@ -47,7 +47,6 @@ public class QuestionLibCenter extends HttpServlet {
 		rd.forward(request, response);
 		}*/
 		//else {
-			
 			//在这里通过携带的参数来判断需要的功能，通过这样来减少servlet的数量
 			String operate=request.getParameter("operate");
 			System.out.println(operate);
@@ -65,9 +64,16 @@ public class QuestionLibCenter extends HttpServlet {
 						RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibEdit.jsp");
 						rd.forward(request, response);
 						break;
+					case "getList":
+						QuestionLibService qls = new QuestionLibServiceImpl();
+						this.libList=qls.showLibList();
+						if(request.getAttribute("libList")!=null){
+							request.removeAttribute("libList");
+						}
+						request.setAttribute("libList", libList);
+						break;
 				}
 			}
-
 		//}
 	}
 	/**

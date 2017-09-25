@@ -33,16 +33,17 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-            <c:forEach var="lib" items="${libList}">
+            <tbody id="LibBody">
+            <c:forEach var="lib" items="${libList}" varStatus="Count">
             		<tr> 
-            	    <td>${lib.question_lib_id}</td>
+            	    <td>${Count.count}</td>
                     <td>${lib.testpage_type}</td>
                     <td>${lib.testpage_job}</td>
                     <td>${lib.question_num}</td>
                     <td class="tdFunction"><span><a href="QuestionLibCenter?lib_id=${lib.question_lib_id}&operate=enterEdit "><button class="btn btn-default">修改题库</button></a></span>
                      <span><button class="btn btn-default removeButton"  name="${lib.question_lib_id}">删除题库</button></span>
-                   	 </td>
+                     <span><a href="QuestionLibCenter?operate=enterQuestionLib"><button class="btn btn-default enterButton">进入题库</button></a></span>
+                    </td>
            			</tr>
             </c:forEach>         
             </tbody>

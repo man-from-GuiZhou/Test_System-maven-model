@@ -26,7 +26,16 @@ $(document).ready(function(){
             },
             function(){
                 alert("ajax");
+                reflushList();
+                //$("#LibBody").load("libList");
+                window.location.reload();
             });
     });
 });
+
+function reflushList(){
+    $.get("QuestionLibCenter",{
+        operate:"getList"
+    });
+}
 
