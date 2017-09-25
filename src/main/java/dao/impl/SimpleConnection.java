@@ -17,6 +17,7 @@ public class SimpleConnection implements DataSource {
 		
 		//当出现空指针问题是不妨先检查配置文件路径，这个地方出错的概率相当大
 		InputStream in = SimpleConnection.class.getClassLoader().getResourceAsStream("db.properties");
+		//InputStream ins = SimpleConnection.class.getClassLoader().getResourceAsStream("db.properties");
 		Properties prop = new Properties();
 		try {
 			prop.load(in);

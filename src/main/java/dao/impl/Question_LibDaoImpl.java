@@ -38,10 +38,11 @@ public class Question_LibDaoImpl implements Question_libDao {
 		return 0;
 	}
 
+	//根据id删除
 	@Override
 	public int removeLib(int id) {
 		// TODO Auto-generated method stub
-		String sql = "delete from where question_lib_id =?";
+		String sql = "delete from question_lib where question_lib_id = ? ";
 		try {
 			conn=JDBCUtils.getConnection();
 			pst=conn.prepareStatement(sql);

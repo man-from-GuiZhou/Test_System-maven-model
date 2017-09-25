@@ -11,7 +11,7 @@
     <title>题库管理中心</title>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
 	</script>
-	<script type="text/javascript" src="JS/QuestionAdminAjax.js"></script>
+	<script src="<%=request.getContextPath()%>/QuestionAdmin/JS/QuestionAdminAjax.js"></script>
 </head>
 <body>
 <div class="pageContent">
@@ -41,7 +41,7 @@
                     <td>${lib.testpage_job}</td>
                     <td>${lib.question_num}</td>
                     <td class="tdFunction"><span><a href="QuestionLibCenter?lib_id=${lib.question_lib_id}&operate=enterEdit "><button class="btn btn-default">修改题库</button></a></span>
-                     <span><button id="removeButton" class="btn btn-default" onclick="remove(12)">删除题库</button></span> 
+                     <span><button class="btn btn-default removeButton"  name="${lib.question_lib_id}">删除题库</button></span>
                    	 </td>
            			</tr>
             </c:forEach>         

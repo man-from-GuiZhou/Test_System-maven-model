@@ -21,7 +21,7 @@ import serviceImpl.QuestionLibServiceImpl;
 @WebServlet("/QuestionLibCenter")
 public class QuestionLibCenter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private ArrayList<Question_Lib> libList = new ArrayList<Question_Lib>();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -35,37 +35,40 @@ public class QuestionLibCenter extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		/*
 		if(request.getParameter("operate")==null) {
-		System.out.println("get方法接收");
+		//System.out.println("get方法接收");
 		QuestionLibService qls = new QuestionLibServiceImpl();
-		ArrayList<Question_Lib> libList=qls.showLibList();
+		this.libList=qls.showLibList();
 		request.setAttribute("libList", libList);
 		RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibCenter.jsp");
 		//rd.forward(request, response);
 		System.out.println(libList);
 		rd.forward(request, response);
-		}
-		else {
+		}*/
+		//else {
 			
 			//在这里通过携带的参数来判断需要的功能，通过这样来减少servlet的数量
 			String operate=request.getParameter("operate");
 			System.out.println(operate);
-			switch(operate){
-			case "enterEdit":
-				try {
-					Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
-					Question_Lib ql = qld.findLib(Integer.parseInt(request.getParameter("lib_id")));
-					request.setAttribute("lib_info", ql);
-				} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			if(operate!=null){
+				switch(operate){
+					case "enterEdit":
+						try {
+							Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
+							Question_Lib ql = qld.findLib(Integer.parseInt(request.getParameter("lib_id")));
+							request.setAttribute("lib_info", ql);
+						} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibEdit.jsp");
+						rd.forward(request, response);
+						break;
 				}
-				RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibEdit.jsp");
-				rd.forward(request, response);
-				break;
 			}
-		}
+
+		//}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -73,7 +76,7 @@ public class QuestionLibCenter extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub 
 		//doGet(request, response);
-		//System.out.println("POST方法接收");
+		 	System.out.println("POST方法接收");
 			//Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
 			QuestionLibService qls = new QuestionLibServiceImpl();
 			String operate=request.getParameter("operate");
@@ -96,7 +99,6 @@ public class QuestionLibCenter extends HttpServlet {
 				int removeId = Integer.parseInt(request.getParameter("testpage_lib_id"));
 				qls.removeLib(removeId);
 			}
-			
 			//这里跳转以后不能更新管理页的页面
 			RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibCenter.jsp");
 			rd.forward(request, response);

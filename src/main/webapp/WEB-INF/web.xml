@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <welcome-file-list>
-    <welcome-file>QuestionLibCenter</welcome-file>
+    <welcome-file>QuestionAdmin/QuestionLibCenter.jsp</welcome-file>
+  <!--  <welcome-file>QuestionLibCenter</welcome-file> -->
   </welcome-file-list>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
@@ -21,12 +22,25 @@
   	    <filter-name>encordingCheck</filter-name>
   	    <filter-class>filter.EncordingFilter</filter-class>
   </filter>
+
+  <filter>
+    <filter-name>libListLoad</filter-name>
+    <filter-class>filter.libListLoad</filter-class>
+  </filter>
   
   <filter-mapping>
   	<filter-name>encordingCheck</filter-name>
   	<url-pattern>*</url-pattern>
   </filter-mapping>
-  
+
+  <filter-mapping>
+    <filter-name>libListLoad</filter-name>
+    <url-pattern>/QuestionLibCenter.jsp</url-pattern>
+    <url-pattern>/QuestionAdmin/QuestionLibCenter.jsp</url-pattern>
+    <dispatcher>FORWARD</dispatcher><!-- 指定这个属性后，forward引起的跳转会被过滤器过滤 -->
+    <dispatcher>REQUEST</dispatcher><!-- 默认的过滤器设置，但是当指定dispatcher后，必须手动设置 -->
+  </filter-mapping>
+
   <filter-mapping>
     <filter-name>PageToIndex</filter-name>
     <url-pattern>*.html</url-pattern>
