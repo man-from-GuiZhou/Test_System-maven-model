@@ -1,5 +1,6 @@
 package controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,10 @@ public class QuestionCenter extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String operate=request.getParameter("operate");
         if(operate!=null){
-
+            switch (operate){
+                case "enterQuestionLib":
+                    RequestDispatcher rd = request.getRequestDispatcher("QuestionAdmin/QuestionCenter");
+            }
         }
     }
 }

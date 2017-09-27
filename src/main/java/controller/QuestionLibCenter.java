@@ -46,6 +46,16 @@ public class QuestionLibCenter extends HttpServlet {
 		System.out.println(libList);
 		rd.forward(request, response);
 		}*/
+		QuestionLibService qls = null;
+		try {
+			qls = (QuestionLibService) Class.forName("serviceImpl.QuestionLibServiceImpl").newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		//else {
 			//在这里通过携带的参数来判断需要的功能，通过这样来减少servlet的数量
 			String operate=request.getParameter("operate");
@@ -53,24 +63,22 @@ public class QuestionLibCenter extends HttpServlet {
 			if(operate!=null){
 				switch(operate){
 					case "enterEdit":
-						try {
-							Question_libDao qld = (Question_libDao) Class.forName("dao.impl.Question_LibDaoImpl").newInstance();
-							Question_Lib ql = qld.findLib(Integer.parseInt(request.getParameter("lib_id")));
-							request.setAttribute("lib_info", ql);
-						} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						Question_Lib ql = qls.findLib(Integer.parseInt(request.getParameter("lib_id")));
+						request.setAttribute("lib_info", ql);
 						RequestDispatcher rd = request.getRequestDispatcher("/QuestionAdmin/QuestionLibEdit.jsp");
 						rd.forward(request, response);
 						break;
 					case "getList":
-						QuestionLibService qls = new QuestionLibServiceImpl();
 						this.libList=qls.showLibList();
 						if(request.getAttribute("libList")!=null){
 							request.removeAttribute("libList");
 						}
 						request.setAttribute("libList", libList);
+						break;
+					case "enterQuestionLib":
+						//request.getn
+						RequestDispatcher rdEQ = request.getRequestDispatcher("/QuestionAdmin/QuestionCenter.jsp");
+						rdEQ.forward(request,response);
 						break;
 				}
 			}

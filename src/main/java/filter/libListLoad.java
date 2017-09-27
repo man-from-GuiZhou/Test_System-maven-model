@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 @WebFilter(filterName = "libListLoad")
+/*
+拦截所有到题库中心的页面，为页面填充数据
+ */
 public class libListLoad implements Filter {
     QuestionLibService qs;
     public void destroy() {

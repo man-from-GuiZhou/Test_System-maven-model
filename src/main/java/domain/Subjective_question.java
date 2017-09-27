@@ -1,6 +1,6 @@
 package domain;
 
-public class Subjective_question extends question{
+public class Subjective_question extends Question {
 	
 	private int question_id;//题目id
 	private int question_lib_id;//题库id

@@ -42,7 +42,7 @@
                     <td>${lib.question_num}</td>
                     <td class="tdFunction"><span><a href="QuestionLibCenter?lib_id=${lib.question_lib_id}&operate=enterEdit "><button class="btn btn-default">修改题库</button></a></span>
                      <span><button class="btn btn-default removeButton"  name="${lib.question_lib_id}">删除题库</button></span>
-                     <span><a href="QuestionLibCenter?operate=enterQuestionLib"><button class="btn btn-default enterButton">进入题库</button></a></span>
+                     <span><a href="QuestionLibCenter?operate=enterQuestionLib&id=${lib.question_lib_id}"><button class="btn btn-default enterButton">进入题库</button></a></span>
                     </td>
            			</tr>
             </c:forEach>         

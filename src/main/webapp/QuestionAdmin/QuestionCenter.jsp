@@ -22,17 +22,17 @@
                         <th>题目编号</th>
                         <th>题目所属类型</th>
                         <th>题目内容</th>
-                        <th>题目答案</th>
                         <th>题目分值</th>
+                        <th>功能选项</th>
                     </tr>
                 </thead>
             <tbody>
                 <c:forEach var="question" items="questionList" varStatus="Count">
                 <tr>
                     <td>${Count.count}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>${question.question_lib_id}</td>
+                    <td>${question.question_content}</td>
+                    <td>${question.question_Score}</td>
                     <td id="tdButton">
                         <span><a href="QuestionEdit.html"><button class="btn btn-default EditButton">修改题目</button></a></span>
                         <span><button class="btn btn-default EditButton">删除题目</button></span>

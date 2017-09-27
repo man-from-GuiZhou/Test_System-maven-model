@@ -1,10 +1,10 @@
 package domain;
 
-public class question {
+public class Question {
 
     private int question_id;//题目id
     private int question_lib_id;//题库id
-    private int question_score;//题目分数
+    private int question_Score;//题目分数
     private String question_content;//题目内容
 
     public String getQuestion_content() {
@@ -31,11 +31,11 @@ public class question {
         this.question_lib_id = question_lib_id;
     }
 
-    public int getQuestion_score() {
-        return question_score;
+    public int getQuestion_Score() {
+        return question_Score;
     }
 
-    public void setQuestion_score(int question_score) {
-        this.question_score = question_score;
+    public void setQuestion_Score(int question_score) {
+        this.question_Score = question_score;
     }
 }

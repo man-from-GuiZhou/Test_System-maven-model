@@ -61,4 +61,8 @@ public class QuestionLibServiceImpl implements QuestionLibService {
 		return 0;
 	}
 
+	public Question_Lib findLib(int id){
+		return qld.findLib(id);
+	}
+
 }

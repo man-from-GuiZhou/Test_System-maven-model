@@ -16,4 +16,6 @@ public interface QuestionLibService {
 	public int removeLib(int id);
 	/*根据题库名移除题库项*/
 	public int removeLib(String lib_job);
+
+	public Question_Lib findLib(int id);
 }
