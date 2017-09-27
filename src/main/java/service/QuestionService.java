@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public interface QuestionService {
     public void removeQuestion(int id);
     public Question findQuestionById(int id);
-    public ArrayList<Question> findQuestionList(int lib_Id);
+    public ArrayList<? extends Question> findQuestionList(int lib_Id);
     /*
     这里针对题目类型采用可变参数，根据参数的数量可以让接口适应于不同的题目类型
      */

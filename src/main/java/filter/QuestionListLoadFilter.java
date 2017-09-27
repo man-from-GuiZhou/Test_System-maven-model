@@ -20,10 +20,9 @@ public class QuestionListLoadFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         int lib_Id = Integer.parseInt(req.getParameter("id"));
         //需要初始化
-
         try {
             QuestionService qs  = (QuestionService) Class.forName("serviceImpl.QuestionLibServiceImpl").newInstance();
-            ArrayList<Question> questionLinkedList = qs.findQuestionList(lib_Id);
+            ArrayList<?extends Question> questionLinkedList = qs.findQuestionList(lib_Id);
             req.setAttribute("questionList","questionLinkedList");
         } catch (InstantiationException e) {
             e.printStackTrace();

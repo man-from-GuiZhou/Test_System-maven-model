@@ -25,7 +25,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public ArrayList<Question> findQuestionList(int lib_Id) {
+    public ArrayList<? extends Question> findQuestionList(int lib_Id) {
         return null;
     }
 

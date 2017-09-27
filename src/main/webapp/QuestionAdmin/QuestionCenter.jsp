@@ -35,7 +35,7 @@
                     <td>${question.question_Score}</td>
                     <td id="tdButton">
                         <span><a href="QuestionEdit.html"><button class="btn btn-default EditButton">修改题目</button></a></span>
-                        <span><button class="btn btn-default EditButton">删除题目</button></span>
+                        <span><button class="btn btn-default removeButton">删除题目</button></span>
                     </td>
                 </tr>
                 </c:forEach>

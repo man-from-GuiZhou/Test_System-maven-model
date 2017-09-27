@@ -18,6 +18,11 @@ function remove(id){
 	}
 	*/
 
+/*
+针对题库管理的ajax模块
+ */
+
+
 $(document).ready(function(){
     $(".removeButton").click(function(){
         $.post("QuestionLibCenter",{

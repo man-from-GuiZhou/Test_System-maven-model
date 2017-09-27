@@ -58,6 +58,8 @@
     <filter-name>QuestionLoad</filter-name>
     <url-pattern>/QuestionCenter.jsp</url-pattern>
     <url-pattern>/QuestionAdmin/QuestionCenter.jsp</url-pattern>
+    <dispatcher>FORWARD</dispatcher><!-- 指定这个属性后，forward引起的跳转会被过滤器过滤 -->
+    <dispatcher>REQUEST</dispatcher><!-- 默认的过滤器设置，但是当指定dispatcher后，必须手动设置 -->
   </filter-mapping>
 
 </web-app>
