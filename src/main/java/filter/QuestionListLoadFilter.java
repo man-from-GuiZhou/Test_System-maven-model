@@ -6,6 +6,7 @@ import service.QuestionService;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 @WebFilter(filterName = "QuestionListLoadFilter")
@@ -19,9 +20,18 @@ public class QuestionListLoadFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         int lib_Id = Integer.parseInt(req.getParameter("id"));
         //需要初始化
-        QuestionService qs ;
-        LinkedList<Question> questionLinkedList = qs.findQuestionList(lib_Id);
-        req.setAttribute("questionList","questionLinkedList");
+
+        try {
+            QuestionService qs  = (QuestionService) Class.forName("serviceImpl.QuestionLibServiceImpl").newInstance();
+            ArrayList<Question> questionLinkedList = qs.findQuestionList(lib_Id);
+            req.setAttribute("questionList","questionLinkedList");
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         chain.doFilter(req, resp);
     }
 

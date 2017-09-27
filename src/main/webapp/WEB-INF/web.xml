@@ -30,6 +30,11 @@
     <filter-name>libListLoad</filter-name>
     <filter-class>filter.libListLoad</filter-class>
   </filter>
+
+  <filter>
+    <filter-name>QuestionLoad</filter-name>
+    <filter-class>filter.QuestionListLoadFilter</filter-class>
+  </filter>
   
   <filter-mapping>
   	<filter-name>encordingCheck</filter-name>
@@ -48,4 +53,11 @@
     <filter-name>PageToIndex</filter-name>
     <url-pattern>*.html</url-pattern>
   </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>QuestionLoad</filter-name>
+    <url-pattern>/QuestionCenter.jsp</url-pattern>
+    <url-pattern>/QuestionAdmin/QuestionCenter.jsp</url-pattern>
+  </filter-mapping>
+
 </web-app>
